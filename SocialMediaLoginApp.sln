@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialMediaLoginApp", "SocialMediaLoginApp\SocialMediaLoginApp.csproj", "{C16A0506-87DB-4E03-BCEA-C163ACCC481B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginTemplate", "SocialMediaLoginApp\LoginTemplate.csproj", "{020B7FC8-EC74-4462-B6E3-69B972436702}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C16A0506-87DB-4E03-BCEA-C163ACCC481B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C16A0506-87DB-4E03-BCEA-C163ACCC481B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C16A0506-87DB-4E03-BCEA-C163ACCC481B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C16A0506-87DB-4E03-BCEA-C163ACCC481B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{020B7FC8-EC74-4462-B6E3-69B972436702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{020B7FC8-EC74-4462-B6E3-69B972436702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020B7FC8-EC74-4462-B6E3-69B972436702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{020B7FC8-EC74-4462-B6E3-69B972436702}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

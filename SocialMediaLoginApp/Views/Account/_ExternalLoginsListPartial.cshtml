@@ -1,0 +1,43 @@
+﻿@model LoginTemplate.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+<h4>Use another service to log in.</h4>
+<hr />
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0) {
+        <div>
+            <p>
+                There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                for details on setting up this ASP.NET application to support logging in via external services.
+            </p>
+        </div>
+    }
+    else {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
+            @Html.AntiForgeryToken()
+            <div id="socialLoginList">
+                <p>
+                    @foreach (AuthenticationDescription p in loginProviders)
+                    {
+                        if (p.AuthenticationType == "Facebook")
+                        {
+                            <button type="submit" class="btn btn-xlarge btn-facebook" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType"><i class="fa fa-facebook"></i> | Login with Facebook</button>
+                        }
+                        else
+                        {
+                            <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                        }
+                    }
+                </p>
+            </div>
+        }
+    }
+}
+
+@*<div class="center">
+    <button class="btn btn-xlarge btn-facebook"><i class="fa fa-facebook" onclick="@Html.Action("FacebookLogin")"></i> | Login with Facebook</button>
+    <button class="btn btn-xlarge btn-twitter"><i class="fa fa-twitter "></i> | Login with Twitter</button>
+    <button class="btn btn-xlarge btn-github"><i class="fa fa-github"></i> | Login with Github</button>
+    <button class="btn btn-xlarge btn-linkedin"><i class="fa fa-linkedin"></i> | Login with LinkedIn</button>
+</div>*@
