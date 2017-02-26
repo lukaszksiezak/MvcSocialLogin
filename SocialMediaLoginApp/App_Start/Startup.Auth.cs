@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using LoginTemplate.Models;
+using System.Configuration;
 
 namespace LoginTemplate
 {
@@ -50,13 +51,16 @@ namespace LoginTemplate
             //    clientId: "",
             //    clientSecret: "");
 
-            app.UseTwitterAuthentication(
-               consumerKey: "dsadasd",
-               consumerSecret: "sadasdad");
+            //app.UseTwitterAuthentication(
+            //   consumerKey: "dsadasd",
+            //   consumerSecret: "sadasdad");
 
+            var fbId = ConfigurationManager.AppSettings["FacebookAppId"];
+            var fbSec = ConfigurationManager.AppSettings["FacebookSecret"];
+            
             app.UseFacebookAuthentication(
-               appId: "   ",
-               appSecret: " ");
+               appId: fbId,
+               appSecret: fbSec);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
