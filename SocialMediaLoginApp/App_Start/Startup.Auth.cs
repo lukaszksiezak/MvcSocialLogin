@@ -51,9 +51,12 @@ namespace LoginTemplate
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "dsadasd",
-            //   consumerSecret: "sadasdad");
+            var consKey = ConfigurationManager.AppSettings["TwitterConsumerKey"];
+            var consSec = ConfigurationManager.AppSettings["TwitterSecret"];
+
+            app.UseTwitterAuthentication(
+                consumerKey: consKey,
+                consumerSecret: consSec);
 
             var fbId = ConfigurationManager.AppSettings["FacebookAppId"];
             var fbSec = ConfigurationManager.AppSettings["FacebookSecret"];
