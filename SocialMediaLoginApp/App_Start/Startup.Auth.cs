@@ -74,18 +74,21 @@ namespace LoginTemplate
             //2) Go to the Settings Tab
             //3) Set a CallBack URL to any website. Even if it is not real.
 
+            var GoogId = ConfigurationManager.AppSettings["GoogleAppId"];
+            var GoogSec = ConfigurationManager.AppSettings["GoogleSecret"];
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = GoogId,
+                ClientSecret = GoogSec
+            });
+
             var fbId = ConfigurationManager.AppSettings["FacebookAppId"];
             var fbSec = ConfigurationManager.AppSettings["FacebookSecret"];
-            
+
             app.UseFacebookAuthentication(
                appId: fbId,
                appSecret: fbSec);
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
         }
     }
 }

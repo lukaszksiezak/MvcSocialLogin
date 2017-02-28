@@ -16,17 +16,21 @@
     else {
         using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
             @Html.AntiForgeryToken()
-            <div id="socialLoginList">
+            <div id="socialLoginList" class="socialLogin">
                 <p>
                     @foreach (AuthenticationDescription p in loginProviders)
                     {
                         if (p.AuthenticationType == "Facebook")
                         {
-                            <button type="submit" class="btn btn-xlarge btn-facebook" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType"><i class="fa fa-facebook"></i> | Login with Facebook</button>
+                            <button type="submit" class="btn btn-xlarge btn-facebook socialButton" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType"><i class="fa fa-facebook"></i> | Login with Facebook</button>
                         }
                         else if (p.AuthenticationType == "Twitter")
                         {
-                            <button type="submit" class="btn btn-xlarge btn-twitter" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType"><i class="fa fa-twitter"></i> | Login with Twitter</button>
+                            <button type="submit" class="btn btn-xlarge btn-twitter socialButton" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType"><i class="fa fa-twitter"></i> | Login with Twitter</button>
+                        }
+                        else if (p.AuthenticationType == "Google")
+                        {
+                            <button type="submit" class="btn btn-xlarge btn-google-plus socialButton" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType"><i class="fa fa-google"></i> | Login with Google</button>
                         }
                         else
                         {
